@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+
+{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0 mb-3 " style="background-color:pink; border-radius: 90px;"  >
+    <img src="https://source.unsplash.com/1200x400/?courier" class="d-block w-100 mx-0" alt="...">
+</div>
+
+
+
+<div class="container mb-3 py-4">
+    <h1 class="text-center" style ="background-color:teal;border-radius:70%;color: white;"> <i>Order Delivery</i></h1>
+    
+
+<form method="post" action="/courier">
+    {% csrf_token %}
+<h1 class = "text-center my-4" style = "font-size:16px;color: teal;"> <i>Sender details here :</i> </h1>
+    <div class="form-group">
+        <label for="Sname">Name</label>
+        <input type="text" class="form-control" id="Sname" name="Sname" placeholder="Enter Sender Name">
+    </div>
+    <div class="form-group">
+        <label for="Sphone">Phone </label>
+        <input type="text" class="form-control" id="Sphone" name="Sphone" placeholder="Enter Sender phone number">
+    </div>
+    <div class="form-group">
+        <label for="pick">Address </label>
+        <input type="text" class="form-control" id="pick" name="pick" placeholder="Enter Sender Address">
+    </div>
+
+
+    <h1 class = "text-center my-4" style = "font-size:16px;color: teal;">> Receiver details here : </h1>
+
+    <div class="form-group">
+        <label for="Rname">Name</label>
+        <input type="text" class="form-control" id="Rname" name="Rname" placeholder="Enter  Receiver Name">
+    </div>
+    <div class="form-group">
+        <label for="Rphone">Phone </label>
+        <input type="text" class="form-control" id="Rphone" name="Rphone" placeholder="Enter Receiver phone number">
+    </div>
+    <div class="form-group">
+        <label for="drop">Address </label>
+        <input type="text" class="form-control" id="drop" name="drop" placeholder="Enter Receiver Address">
+    </div>
+
+    <div class="form-group">
+        <label for="package">Detailed discription of courier...</label>
+        <textarea class="form-control" id="package" rows="3" name="package" placeholder="Package weight and size , what does the package contain , Desired Delivery time..if any? , etc."></textarea>
+    </div>
+    <button class="btn btn-primary  my-4"" type="submit">Submit</button>
+</form>
+
+</div>
+
+    {% endblock body %}

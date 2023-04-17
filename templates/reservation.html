@@ -1,0 +1,56 @@
+{% extends 'base.html.' %}
+
+{% block title %} 
+
+
+
+{% endblock title %} 
+
+
+{% block body %}
+
+
+<div class="container-fluid px-0 mb-3" >
+    <img src="https://source.unsplash.com/1200x400/?cafe" class="d-block w-100 mx-0" alt="...">
+</div>
+
+<h1 class='text-center my-0 mx-0'  style="background-color:pink;" ><i> Make  Reservation here</i> </h1> 
+
+<div class= "container my-4">
+     
+
+<form method = "post" action="/reservation">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+      <label for="plan">Choose your plan </label>
+      <select class="form-control" id="plan" name="plan">
+        <option>Platinum (200-300 guests)</option>
+        <option>Gold (100-200 guests)</option>
+        <option>Silver (50-100 guests)</option>
+        <option>table (5-10 guests)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="occasion">Date of Booking</label>
+        <input type="text" class="form-control" id="occasion" name="occasion" placeholder="01.01.2023">
+    </div>
+    <div class="form-group">
+      <label for="Address">Address</label>
+      <textarea class="form-control" id="Address" rows="3"></textarea>
+    </div>
+
+     <button class="btn btn-success" type="submit">Submit</button>
+</div>
+  </form>
+</div>
+
+{% endblock body %}

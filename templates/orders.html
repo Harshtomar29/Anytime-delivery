@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock title %}
+ 
+{% block body %}
+
+<div class="container-fluid px-0 mb-3" >
+    <img src="https://source.unsplash.com/1200x400/?cafe" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class="container mb-3 py-4">
+    <h1 class="text-center" style = "background-color:pink;border-radius:170%">Place order here </h1>
+
+<form method = "post" action="/orders">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+    </div>  
+
+
+    <div class="form-group">
+        <label for="flavor">Item</label>
+        <select multiple class="form-control" name = "product" id="product">
+          <option>Groceries</option>
+          <option>Pan shop</option>
+          <option>Snacks & Beverages </option>
+          <option>Restaurant & Takeaway</option>
+          <option>Pharmacy</option>
+        </select>
+      </div>
+
+
+    <div class="form-group">
+      <label for="Quantity">Quantity</label>
+      <select class="form-control" name="Quantity" id="Quantity">
+        <option>1 pack</option>
+        <option>2 pack</option>
+        <option>3 pack</option>
+        <option>4 pack</option>
+        <option>5 pack</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Detail discription of item </label>
+      <textarea class="form-control" name = "details" id="details" rows="3"></textarea>
+    </div>
+ 
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Address</label>
+      <textarea class="form-control" name = "Address" id="Address" rows="3"></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</div>
+  </form>
+
+
+
+
+
+{% endblock body %}
